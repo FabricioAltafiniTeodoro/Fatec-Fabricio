@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gerenciar Vagas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container { padding: 40px 0; }
+        .form-vaga { background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
+        .table-vagas { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; }
+        .table-vagas th, .table-vagas td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .btn-edit { color: var(--primary); cursor: pointer; margin-right: 10px; background: none; border: none; font-weight: bold; }
+        .btn-delete { color: #ef4444; cursor: pointer; background: none; border: none; font-weight: bold; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+       <nav class="container">
+    <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+        Talento<span>Connect</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Vagas</a></li>
+        <li><a href="admin.html" style="color: var(--secondary); font-size: 0.8rem;">⚙️ Painel Empresa</a></li>
+        <li class="btn-destaque"><a href="cadastro.html">Entrar / Cadastrar</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <div class="container admin-container">
+        <h2>Gerenciar Vagas</h2>
+        
+        <div class="form-vaga">
+            <h3 id="form-title">Adicionar Nova Vaga</h3>
+            <form id="vaga-form" style="margin-top: 15px;">
+                <input type="hidden" id="vaga-id">
+                <div class="form-grid">
+                    <input type="text" id="titulo" placeholder="Título da Vaga" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="text" id="empresa" placeholder="Nome da Empresa" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <select id="tipo" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="Estágio">Estágio</option>
+                        <option value="Efetivo (CLT)">Efetivo (CLT)</option>
+                    </select>
+                    <input type="text" id="local" placeholder="Localização" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <textarea id="desc" placeholder="Descrição da vaga" style="width: 100%; margin-top: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <button type="submit" class="btn-candidatar-premium" style="margin-top: 15px; padding: 10px;">Salvar Vaga</button>
+            </form>
+        </div>
+
+        <table class="table-vagas">
+            <thead>
+                <tr style="background: #f1f5f9;">
+                    <th>Vaga</th>
+                    <th>Empresa</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="lista-vagas-admin">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Simulação de Banco de Dados no LocalStorage
+        let vagas = JSON.parse(localStorage.getItem('vagas')) || [
+            { id: 1, titulo: "Dev Front-end", empresa: "TechNova", tipo: "Estágio", local: "SP", desc: "Vaga para React" },
+            { id: 2, titulo: "Mkt Digital", empresa: "GrowthHub", tipo: "Efetivo (CLT)", local: "Remoto", desc: "Vaga para SEO" }
+        ];
+
+        const form = document.getElementById('vaga-form');
+        const lista = document.getElementById('lista-vagas-admin');
+
+        function renderVagas() {
+            localStorage.setItem('vagas', JSON.stringify(vagas));
+            lista.innerHTML = vagas.map(v => `
+                <tr>
+                    <td>${v.titulo}</td>
+                    <td>${v.empresa}</td>
+                    <td><span class="badge ${v.tipo === 'Estágio' ? 'badge-estagio' : 'badge-clt'}">${v.tipo}</span></td>
+                    <td>
+                        <button class="btn-edit" onclick="editarVaga(${v.id})">Editar</button>
+                        <button class="btn-delete" onclick="deletarVaga(${v.id})">Excluir</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // CREATE & UPDATE
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const id = document.getElementById('vaga-id').value;
+            const novaVaga = {
+                id: id ? parseInt(id) : Date.now(),
+                titulo: document.getElementById('titulo').value,
+                empresa: document.getElementById('empresa').value,
+                tipo: document.getElementById('tipo').value,
+                local: document.getElementById('local').value,
+                desc: document.getElementById('desc').value
+            };
+
+            if (id) {
+                const index = vagas.findIndex(v => v.id == id);
+                vagas[index] = novaVaga;
+            } else {
+                vagas.push(novaVaga);
+            }
+
+            form.reset();
+            document.getElementById('vaga-id').value = '';
+            document.getElementById('form-title').innerText = "Adicionar Nova Vaga";
+            renderVagas();
+        };
+
+        // DELETE
+        window.deletarVaga = (id) => {
+            vagas = vagas.filter(v => v.id !== id);
+            renderVagas();
+        };
+
+        // EDIT (Preenche o formulário para atualizar)
+        window.editarVaga = (id) => {
+            const v = vagas.find(v => v.id === id);
+            document.getElementById('vaga-id').value = v.id;
+            document.getElementById('titulo').value = v.titulo;
+            document.getElementById('empresa').value = v.empresa;
+            document.getElementById('tipo').value = v.tipo;
+            document.getElementById('local').value = v.local;
+            document.getElementById('desc').value = v.desc;
+            document.getElementById('form-title').innerText = "Editando Vaga: " + v.titulo;
+            window.scrollTo(0,0);
+        };
+
+        renderVagas();
+    </script>
+</body>
+</html>

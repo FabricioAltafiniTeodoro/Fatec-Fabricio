@@ -1,0 +1,75 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --accent: #10b981;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--light); color: var(--dark); line-height: 1.5; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER & NAV */
+header { background: #fff; padding: 18px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--primary); }
+nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+nav a { text-decoration: none; color: var(--secondary); font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--primary); }
+.btn-destaque a { background: var(--primary); color: white; padding: 8px 20px; border-radius: 6px; }
+
+/* HERO SECTION */
+.hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 60px 0; text-align: center; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+.search-box { background: white; padding: 8px; border-radius: 10px; display: inline-flex; gap: 10px; margin-top: 25px; width: 90%; max-width: 600px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.search-box input { flex: 1; border: none; padding: 12px; outline: none; font-size: 1rem; }
+.search-box button { background: var(--accent); color: white; border: none; padding: 0 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* JOBS LISTING */
+.jobs { display: grid; grid-template-columns: 240px 1fr; gap: 30px; padding: 40px 0; }
+.filters { background: white; padding: 20px; border-radius: 12px; height: fit-content; border: 1px solid #e2e8f0; }
+.filters h3 { margin-bottom: 15px; font-size: 1.1rem; }
+.filters label { display: block; margin-bottom: 12px; color: var(--secondary); cursor: pointer; font-size: 0.95rem; }
+
+.job-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #e2e8f0; transition: 0.3s; }
+.job-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+.badge { font-size: 0.7rem; padding: 5px 12px; border-radius: 50px; font-weight: 700; text-transform: uppercase; }
+.badge-estagio { background: #dcfce7; color: #166534; }
+.badge-clt { background: #dbeafe; color: #1e40af; }
+
+.btn-apply { background: #f1f5f9; border: none; color: var(--primary); padding: 10px 18px; border-radius: 8px; font-weight: 600; }
+
+/* MODAL STYLES */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); }
+.modal-content { background: #fff; margin: 6% auto; padding: 35px; border-radius: 16px; width: 90%; max-width: 600px; position: relative; animation: slideIn 0.3s ease-out; }
+
+@keyframes slideIn { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.close-modal { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; color: var(--secondary); }
+
+.modal-detail-section { margin-top: 25px; }
+.modal-detail-section h4 { color: var(--dark); margin-bottom: 8px; font-size: 1rem; border-left: 4px solid var(--primary); padding-left: 10px; }
+.modal-detail-section ul { padding-left: 25px; color: var(--secondary); }
+
+/* BOTÃO PREMIUM PERSONALIZADO */
+.btn-candidatar-premium {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white; border: none; padding: 16px; border-radius: 10px;
+    font-size: 1rem; font-weight: 700; text-transform: uppercase;
+    cursor: pointer; transition: 0.3s; width: 100%; margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+.btn-candidatar-premium:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
+.btn-success { background: var(--accent) !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .jobs { grid-template-columns: 1fr; }
+    .job-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .btn-apply { width: 100%; text-align: center; }
+}

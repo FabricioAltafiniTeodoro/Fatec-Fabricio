@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Perfil | TalentoConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container { background: white; padding: 40px; border-radius: 12px; max-width: 600px; margin: 50px auto; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; outline-color: var(--primary); }
+        .btn-submit { background: var(--primary); color: white; border: none; width: 100%; padding: 15px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        .btn-submit:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+    <header>
+       <nav class="container">
+    <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+        Talento<span>Connect</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Vagas</a></li>
+        <li><a href="admin.html" style="color: var(--secondary); font-size: 0.8rem;">⚙️ Painel Empresa</a></li>
+        <li class="btn-destaque"><a href="cadastro.html">Entrar / Cadastrar</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <div class="container">
+        <section class="form-container">
+            <h2>Crie seu Perfil Profissional</h2>
+            <p style="margin-bottom: 30px; color: var(--secondary);">Complete os dados para se candidatar em um clique.</p>
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<div id="google-login-section" style="text-align: center; margin-bottom: 25px;">
+    <p style="margin-bottom: 15px; color: var(--secondary); font-size: 0.9rem;">Entre rapidamente com sua conta:</p>
+    
+    <div id="g_id_onload"
+         data-client_id="SEU_CLIENT_ID_AQUI.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="large"
+         data-logo_alignment="left"
+         data-width="100%">
+    </div>
+
+    <div style="margin: 20px 0; display: flex; align-items: center; color: #cbd5e1;">
+        <hr style="flex: 1; border: 0; border-top: 1px solid #e2e8f0;">
+        <span style="margin: 0 10px; font-size: 0.8rem;">OU CADASTRE-SE MANUALMENTE</span>
+        <hr style="flex: 1; border: 0; border-top: 1px solid #e2e8f0;">
+    </div>
+</div>
+
+<script>
+    function handleCredentialResponse(response) {
+        // O 'response.credential' é um JWT (JSON Web Token)
+        // que contém as informações do usuário (nome, email, foto)
+        console.log("Token JWT do Google: " + response.credential);
+        
+        // Decodificando o token (apenas para exemplo no front-end)
+        const data = parseJwt(response.credential);
+        alert("Bem-vindo(a), " + data.name + "!\nEmail: " + data.email);
+        
+        // Aqui você enviaria 'response.credential' para seu servidor/backend
+    }
+
+    function parseJwt(token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
+</script>
+            <form>
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Ex: João Silva">
+                </div>
+                <div class="form-group">
+                    <label>Área de Interesse</label>
+                    <select>
+                        <option>Desenvolvimento Software</option>
+                        <option>Design UX/UI</option>
+                        <option>Marketing Digital</option>
+                        <option>Administração/Estágio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Resumo Profissional ou Acadêmico</label>
+                    <textarea rows="4" placeholder="Conte um pouco sobre suas habilidades e o que busca..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Link do LinkedIn ou Portfólio</label>
+                    <input type="url" placeholder="https://linkedin.com/in/seuusuario">
+                </div>
+                <button type="submit" class="btn-submit">Salvar Perfil</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

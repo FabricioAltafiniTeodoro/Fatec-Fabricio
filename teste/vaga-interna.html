@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaga: Desenvolvedor Front-end | TalentoConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vaga-header { background: white; padding: 40px 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 40px; }
+        .vaga-grid { display: grid; grid-template-columns: 1fr 350px; gap: 40px; }
+        .content section { margin-bottom: 30px; line-height: 1.6; }
+        .content h3 { margin-bottom: 15px; color: var(--dark); }
+        .sidebar-card { background: white; padding: 30px; border-radius: 12px; position: sticky; top: 20px; border: 1px solid #e2e8f0; }
+        .list-items { margin-left: 20px; margin-top: 10px; }
+        .list-items li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+    <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">
+        Talento<span>Connect</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Vagas</a></li>
+        <li><a href="admin.html" style="color: var(--secondary); font-size: 0.8rem;">⚙️ Painel Empresa</a></li>
+        <li class="btn-destaque"><a href="cadastro.html">Entrar / Cadastrar</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <div class="vaga-header">
+        <div class="container">
+            <span class="badge badge-estagio">Estágio</span>
+            <h1 style="font-size: 2.5rem; margin: 10px 0;">Desenvolvedor Front-end (React)</h1>
+            <p style="font-size: 1.2rem; color: var(--secondary);">TechNova Solutions • São Paulo • Postada há 2 dias</p>
+        </div>
+    </div>
+
+    <div class="container vaga-grid">
+        <main class="content">
+            <section>
+                <h3>Sobre a Empresa</h3>
+                <p>A TechNova é uma startup em crescimento focada em soluções financeiras para jovens empreendedores. Nosso ambiente é descontraído, focado em aprendizado contínuo e tecnologia de ponta.</p>
+            </section>
+
+            <section>
+                <h3>Requisitos</h3>
+                <ul class="list-items">
+                    <li>Estar cursando TI, ADS, Ciência da Computação ou áreas correlatas.</li>
+                    <li>Conhecimento básico em HTML, CSS e JavaScript moderno (ES6+).</li>
+                    <li>Noções de React ou algum framework moderno.</li>
+                    <li>Vontade de aprender e boa comunicação.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Diferenciais</h3>
+                <ul class="list-items">
+                    <li>Conhecimento em TypeScript.</li>
+                    <li>Projetos pessoais no GitHub.</li>
+                    <li>Inglês básico para leitura técnica.</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3 style="margin-bottom: 10px;">Interessado?</h3>
+                <p style="color: var(--secondary); margin-bottom: 20px;">Candidate-se agora e seu perfil será enviado diretamente para o RH da TechNova.</p>
+                <button class="btn-submit">Enviar Candidatura</button>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #94a3b8;">Dica: Mantenha seu GitHub atualizado!</p>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
