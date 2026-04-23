@@ -2,134 +2,42 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalentoConnect | Portal de Vagas</title>
+    <title>Locadora</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">Talento<span>Connect</span></div>
-            <ul>
-                <li><a href="index.html">Vagas</a></li>
-                <li><a href="admin.html">Painel Empresa</a></li>
-                <li class="btn-destaque"><a href="cadastro.html">Entrar / Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Sua próxima oportunidade começa aqui.</h1>
-                <p>Encontre as melhores vagas de estágio e emprego.</p>
-                <div class="search-box">
-                    <input type="text" id="inputBusca" placeholder="Cargo ou palavra-chave">
-                    <button onclick="buscarVagas()">Buscar Vagas</button>
-                </div>
+    <div class="container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <h2>LOCADORA</h2>
+            <a href="#">Dashboard</a>
+            <a href="#">Clientes</a>
+            <a href="#">Veículos</a>
+            <a href="#">Locações</a>
+            <a href="#">Financeiro</a>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="conteudo">
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+                <div class="card">🚗 Disponíveis: 8</div>
+                <div class="card">🔑 Alugados: 3</div>
+                <div class="card">💰 R$ 12.000</div>
+                <div class="card">📄 15 contratos</div>
             </div>
-        </section>
 
-        <section class="jobs container">
-            <aside class="filters">
-                <h3>Filtrar por</h3>
-                <label><input type="checkbox"> Estágio</label>
-                <label><input type="checkbox"> Júnior</label>
-                <label><input type="checkbox"> Remoto</label>
-            </aside>
+            <div class="tabela">
+                <h2>Últimas locações</h2>
+                <p>João - HB20 - 3 dias</p>
+                <p>Maria - Onix - 5 dias</p>
+            </div>
+        </main>
 
-            <div class="job-list" id="job-list">
-                </div>
-        </section>
-    </main>
-
-    <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f1f5f9; border-radius: 12px;">
-        <p>É uma empresa? <a href="admin.html" style="color: var(--primary); font-weight: bold;">Anuncie suas vagas aqui no CRUD.</a></p>
     </div>
 
-    <div id="vagaModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <script>
-        // 1. BANCO DE DADOS (LocalStorage + Dados Fixos)
-        const dadosFixos = [
-            { id: 'front', titulo: "Desenvolvedor Front-end", empresa: "TechNova", tipo: "Estágio", local: "São Paulo", desc: "Apoio no desenvolvimento de interfaces modernas utilizando React.", requisitos: "HTML, CSS, JS", beneficios: "Bolsa R$ 1.500" },
-            { id: 'mkt', titulo: "Analista de Marketing", empresa: "GrowthHub", tipo: "Efetivo (CLT)", local: "Remoto", desc: "Gestão de campanhas pagas e SEO.", requisitos: "Google Ads, Analytics", beneficios: "Plano de Saúde" }
-        ];
-
-        let vagasCRUD = JSON.parse(localStorage.getItem('vagas')) || [];
-        let todasAsVagas = [...dadosFixos, ...vagasCRUD];
-
-        const modal = document.getElementById("vagaModal");
-        const modalBody = document.getElementById("modal-body");
-        const btnClose = document.querySelector(".close-modal");
-
-        // 2. FUNÇÃO PARA RENDERIZAR VAGAS NA TELA
-        function renderHome() {
-            const container = document.getElementById('job-list');
-            container.innerHTML = todasAsVagas.map(v => `
-                <div class="job-card" onclick="abrirModal('${v.id}')">
-                    <div class="job-info">
-                        <span class="badge ${v.tipo === 'Estágio' ? 'badge-estagio' : 'badge-clt'}">${v.tipo}</span>
-                        <h2>${v.titulo}</h2>
-                        <p class="company">${v.empresa} • ${v.local || 'Brasil'}</p>
-                        <p class="description">Clique para ver detalhes...</p>
-                    </div>
-                    <button class="btn-apply">Ver Detalhes</button>
-                </div>
-            `).join('');
-        }
-
-        // 3. FUNÇÃO PARA ABRIR MODAL COM DESCRIÇÃO
-        window.abrirModal = function(id) {
-            const v = todasAsVagas.find(item => item.id == id);
-            if (!v) return;
-
-            modalBody.innerHTML = `
-                <span class="badge ${v.tipo === 'Estágio' ? 'badge-estagio' : 'badge-clt'}">${v.tipo}</span>
-                <h2 style="margin: 15px 0 5px 0;">${v.titulo}</h2>
-                <p style="color: gray;">${v.empresa}</p>
-                
-                <div class="modal-detail-section">
-                    <h4>Descrição</h4>
-                    <p>${v.desc || v.descricao || 'Sem descrição informada.'}</p>
-                </div>
-
-                <div class="modal-detail-section">
-                    <h4>Requisitos</h4>
-                    <p>${v.requisitos || 'Consulte a empresa.'}</p>
-                </div>
-
-                <button id="btnEnviarCandidatura" class="btn-candidatar-premium">Enviar Candidatura Agora</button>
-            `;
-
-            modal.style.display = "block";
-
-            // Lógica do botão dentro do modal
-            const btnAction = document.getElementById("btnEnviarCandidatura");
-            btnAction.onclick = function() {
-                // Simulação de Login
-                const logado = false; 
-                if(!logado) {
-                    alert("Você precisa estar logado!");
-                    window.location.href = 'cadastro.html';
-                } else {
-                    this.innerHTML = "Enviado com Sucesso!";
-                    this.style.background = "var(--accent)";
-                }
-            };
-        };
-
-        // 4. FECHAR MODAL
-        btnClose.onclick = () => modal.style.display = "none";
-        window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; };
-
-        // Inicializar
-        renderHome();
-    </script>
 </body>
 </html>
