@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-
-        
+/* --------------------------------------*/
+ /*Estilo da imagem de fundo com a frases */  
+ /* --------------------------------------*/
 .hero {
   height: 100vh;
   background: url('img/LagoEsmeralda.jpg') center/cover no-repeat;
@@ -46,6 +47,63 @@
   background: #a9041a;
 }
 
+/* --------------------------------------*/
+ /*Principais pontos turisticos do Canada*/  
+ /* --------------------------------------*/
+.pontosturistico {
+  margin-top: -120px;
+  background-color: #fff;
+  
+}
+
+.pontosturistico h1{
+  color: #000;
+  padding-top: 80px;
+  text-align: center;
+}
+
+/* CONTAINER DOS CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h2 {
+  padding: 15px;
+}
+
+.card p {
+  padding: 0 15px 20px;
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
     </style>
 </head>
 <body>
@@ -71,43 +129,90 @@
   </nav>
 </header>
 
-<section class="hero">
-  <div class="overlay">
-    <h1>Conheças as maravilhas do Canadá</h1>
-    <p>Explore as belezas naturais e culturais do segundo maior país do mundo.</p>
-    
-    <a href="PontosTuristicos.html" class="btn">Pontos Turísticos</a>
-  </div>
-</section>
+<main>
+    <section class="hero">
+      <div class="overlay">
+        <h1>Conheças as maravilhas do Canadá</h1>
+        <p>Explore as belezas naturais e culturais do segundo maior país do mundo.</p>
+        
+        <a href="PontosTuristico.html" class="btn">Pontos Turísticos</a>
+      </div>
+    </section>
 
-  <main>
+    <div class="pontosturistico">
+      <h1>Principais Pontos Turisticos do Canadá</h1>
+
+        <div class="cards">
+
+          <!-- CARD 1 -->
+          <a href="PontosTuristico.html" class="card">
+            <img src="img/LagoEsmeraldaCard1.jpg" alt="Lago Esmeralda">
+            <h2>Lago Esmeralda</h2>
+            <p>Localizado em Alberta, é famoso por suas águas verdes cristalinas.</p>
+          </a>
+
+          <!-- CARD 2 -->
+          <a href="PontosTuristico.html" class="card">
+            <img src="img/CatarataNiagara.jpg" alt="Cataratas do Niágara">
+            <h2>Cataratas do Niágara</h2>
+            <p>Uma das quedas d’água mais famosas do mundo, na fronteira com os EUA.</p>
+          </a>
+
+          <!-- CARD 3 -->
+          <a href="PontosTuristico.html" class="card">
+            <img src="img/TorontoCanada-.jpg" alt="Cidade Toronto">
+            <h2>Cidade Toronto</h2>
+            <p>Toronto é um centro internacional de negócios, finanças, artes, esportes e cultura, e é reconhecido como uma das cidades mais multiculturais e cosmopolitas do mundo.</p>
+          </a>
+
+        </div>
+    </div>
+
+ 
     
   </main>
-  <footer>
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/BandeiraCanadá.png"> 
-        Canadá   
-      </a>
+  <footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUNA 1 -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="img/BandeiraCanadá.png" alt="Canadá">
+        <div>
+          <h2>Canadá</h2>
+          <span>Turismo & Cultura</span>
+        </div>
+      </div>
+    </div> 
+
+    <!-- COLUNA 2 -->
+    <div class="footer-col">
+      <ul class="footer-links">
+        <li><span>›</span><a href="Cultura.html">Cultura</a></li>
+        <li><span>›</span><a href="PontosTuristico.html">Turismo</a></li>
+        <li><span>›</span><a href="PratosTipicos.html">Culinária</a></li>
+        <li><span>›</span><a href="GeografiaCanadá.html">Mapa do Canadá</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUNA 3 -->
+    <div class="footer-col">
+      <p class="text">
+        Quer conhecer mais sobre o Canadá?  
+        Explore conteúdos e descubra tudo sobre o país.
+      </p>
+
+      <a href="https://brasilescola.uol.com.br/geografia/canada.htm" target="_blank" class="btn-exp">Explorar mais</a>
+
+      <p class="privacy">Política de privacidade</p>
+    </div>
+  </div> 
+
+  <div class="footer-bottom">
+    <p>© 2026 Projeto Canadá - Desenvolvido por Fabrício Altafini Teodoro</p>
   </div>
 
-
-    <p>Desenvolvido por Fabrício Altafini Teodoro</p>
-
-
-
-      <div id="linkinternos">
-        <h1>Links Internos</h1>
-          <ul>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
-          </ul>
-
-      </div>
-  </footer>
-
-
+</footer>
 </body>
 </html>

@@ -11,7 +11,7 @@ body {
 
 /* HEADER */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   padding: 5px 100px;
@@ -65,16 +65,109 @@ nav a:hover {
 
 /*FOOTER */
 
-footer {
-  background-color: #0c0c0c;
-  padding-left: 100px;
+.footer {
+  background: #131313;
+  color: #ccc;
+  padding: 60px;
 }
 
-footer p {
-  text-align: center;
-  padding-top: 10px;
-}
-
-#linkinternos {
+/* CONTAINER */
+.footer-container {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* COLUNAS */
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* LOGO */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  width: 160px;
+  height: auto;
+}
+
+.footer-logo h2 {
+  color: white;
+}
+
+.footer-logo span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* LINKS */
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+  position: relative;
+}
+
+.footer-links span {
+  color: #D80621;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.footer-links a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* CTA */
+.text{
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.btn-exp {
+  display: inline-block;
+  background: #D80621;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-exp:hover {
+  background: #a9041a;
+  transform: translateY(-2px); 
+}
+
+/* PRIVACY */
+.privacy {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
 }
