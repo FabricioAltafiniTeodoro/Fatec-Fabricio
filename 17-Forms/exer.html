@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscricao do HiperCurso</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="form">
+        <form action="enviar.php" method="post">
+
+            <h1>Inscricao HiperCurso do Prof Junior</h1>
+
+            <div class="input">
+                <label for="nome">Nome: </label>
+                <input  type="text" name="nome" id="nome">
+            </div>    
+
+            <div class="input">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="input">
+                <label for="escolaridade">Escolariedade: </label>
+                    <select name="escolaridade">
+                            <option value="em">Ensino Medio</option>
+                            <option value="nt">Nivel Tecnico</option>
+                            <option value="ns">Nivel superior</option>
+                    </select>
+            </div>
+
+            <div class="input">
+                <label for="periodo">Periodo de estudo:</label>
+                        <input type="radio" name="periodo" value="1" checked> manhã
+                        <input type="radio" name="periodo" value="2"> Tarde
+                        <input type="radio" name="periodo" value="3"> Noite
+            </div>
+
+            <div class="input">
+                <label for="curso">Curso Desejado:</label>
+                        <input type="checkbox" name="curso1" value="Com" checked> Python
+                        <input type="checkbox" name="curso2" value="eng"> HTML e CSS
+                        <input type="checkbox" name="curso3" value="bio"> PHP e MySQL
+                        <input type="checkbox" name="curso4" value="psi"> GitHub
+            </div>
+
+            <div class="input">
+                <label for="obs">Por que deseja fazer o curso? </label>
+                    <textarea name="obs" cols="20" rows="5"></textarea>
+            </div>
+
+            <fieldset>
+                <legend>Criação de login</legend>
+                    <div class="input">
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+
+                    <div class="input">
+                        <label for="senha">Senha: </label>
+                        <input type="password" name="senha" size="10" maxlength="5">
+                    </div>
+
+                    <div class="input">
+                        <label for="confsenha">Confirmar Senha: </label>
+                        <input type="password" name="confsenha" size="10" maxlength="5">
+                    </div>
+            </fieldset>
+
+             <input type="submit" value="Fazer Inscrição">
+        </form>
+    </div> 
+</body>
+</html>

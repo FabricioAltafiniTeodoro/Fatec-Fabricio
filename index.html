@@ -48,64 +48,64 @@
     </main>
 
     <script>
-      const listaOrcamento = [];
-const listaUl = document.getElementById('lista-itens');
-const form = document.getElementById('form-orcamento');
+        const listaOrcamento = [];
+        const listaUl = document.getElementById('lista-itens');
+        const form = document.getElementById('form-orcamento');
 
-// Adiciona produto à lista
-document.querySelectorAll('.btn-add').forEach(botao => {
-    botao.addEventListener('click', () => {
-        const card = botao.parentElement;
-        const nomeProduto = card.getAttribute('data-nome');
-        
-        // Evita duplicados na lista visual (opcional)
-        if (!listaOrcamento.includes(nomeProduto)) {
-            listaOrcamento.push(nomeProduto);
-            atualizarListaUI();
-        } else {
-            alert('Este produto já está na sua lista!');
+        // Adiciona produto à lista
+        document.querySelectorAll('.btn-add').forEach(botao => {
+            botao.addEventListener('click', () => {
+                const card = botao.parentElement;
+                const nomeProduto = card.getAttribute('data-nome');
+                
+                // Evita duplicados na lista visual (opcional)
+                if (!listaOrcamento.includes(nomeProduto)) {
+                    listaOrcamento.push(nomeProduto);
+                    atualizarListaUI();
+                } else {
+                    alert('Este produto já está na sua lista!');
+                }
+            });
+        });
+
+        function atualizarListaUI() {
+            listaUl.innerHTML = '';
+            listaOrcamento.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${item} <button onclick="removerItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">x</button>`;
+                listaUl.appendChild(li);
+            });
         }
-    });
-});
 
-function atualizarListaUI() {
-    listaUl.innerHTML = '';
-    listaOrcamento.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `${item} <button onclick="removerItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">x</button>`;
-        listaUl.appendChild(li);
-    });
-}
+        function removerItem(index) {
+            listaOrcamento.splice(index, 1);
+            atualizarListaUI();
+        }
 
-function removerItem(index) {
-    listaOrcamento.splice(index, 1);
-    atualizarListaUI();
-}
+        // Simulação de envio
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (listaOrcamento.length === 0) {
+                alert("Sua lista está vazia! Escolha algum produto primeiro.");
+                return;
+            }
 
-// Simulação de envio
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    if (listaOrcamento.length === 0) {
-        alert("Sua lista está vazia! Escolha algum produto primeiro.");
-        return;
-    }
+            const dados = {
+                cliente: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                mensagem: document.getElementById('mensagem').value,
+                produtos: listaOrcamento
+            };
 
-    const dados = {
-        cliente: document.getElementById('nome').value,
-        email: document.getElementById('email').value,
-        mensagem: document.getElementById('mensagem').value,
-        produtos: listaOrcamento
-    };
-
-    console.log("Enviando solicitação de orçamento:", dados);
-    alert(`Obrigado, ${dados.cliente}! Sua solicitação de orçamento para ${dados.produtos.length} itens foi enviada.`);
-    
-    // Resetar formulário e lista
-    listaOrcamento.length = 0;
-    atualizarListaUI();
-    form.reset();
-});
+            console.log("Enviando solicitação de orçamento:", dados);
+            alert(`Obrigado, ${dados.cliente}! Sua solicitação de orçamento para ${dados.produtos.length} itens foi enviada.`);
+            
+            // Resetar formulário e lista
+            listaOrcamento.length = 0;
+            atualizarListaUI();
+            form.reset();
+        });
 
     </script>
 </body>
