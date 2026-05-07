@@ -1,84 +1,571 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melhores pontos turisticos do Canadá</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <title>Melhores Pontos Turísticos do Canadá</title>
+
+  <!-- FONTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* RESET */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: #fff;
+  color: white;
+}
+
+/* -------------------------------- */
+/* HERO */
+/* -------------------------------- */
+
+.hero-turismo{
+  height: 75vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+  url('img/BanffCanada.jpg') center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay{
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero-overlay h1{
+  font-size: 65px;
+  margin-bottom: 25px;
+
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p{
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* -------------------------------- */
+/* INTRODUÇÃO */
+/* -------------------------------- */
+
+.intro-turismo{
+  background: white;
+  color: #000;
+  padding: 100px 50px;
+}
+
+.intro-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-container h1{
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.intro-container p{
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* -------------------------------- */
+/* DESTINOS */
+/* -------------------------------- */
+
+.destinos{
+  background: #f5f5f5;
+  padding: 100px 50px;
+}
+
+.destinos h1{
+  text-align: center;
+  color: #111;
+  margin-bottom: 60px;
+  font-size: 45px;
+}
+
+/* CARDS */
+
+.destino-cards{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.destino-card{
+  width: 380px;
+  background: white;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  text-decoration: none;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+}
+
+.destino-card:hover{
+  transform: translateY(-10px);
+}
+
+.destino-card img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.destino-info{
+  padding: 25px;
+}
+
+.destino-info h2{
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.destino-info p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* NATUREZA */
+/* -------------------------------- */
+
+.natureza{
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+
+  padding: 100px 50px;
+  flex-wrap: wrap;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.natureza-texto{
+  flex: 1;
+  min-width: 300px;
+}
+
+.natureza-texto h1{
+  font-size: 45px;
+  color: #111;
+  margin-bottom: 25px;
+}
+
+.natureza-texto p{
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+.natureza-img{
+  flex: 1;
+}
+
+.natureza-img img{
+  width: 100%;
+  max-width: 550px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* -------------------------------- */
+/* DICAS */
+/* -------------------------------- */
+
+.dicas{
+  background: #f5f5f5;
+  padding: 100px 50px;
+}
+
+.dicas h1{
+  text-align: center;
+  color: #111;
+  font-size: 45px;
+  margin-bottom: 60px;
+}
+
+/* CARDS */
+
+.dicas-cards{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dica-card{
+  width: 320px;
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+}
+
+.dica-card:hover{
+  transform: translateY(-10px);
+}
+
+.dica-card h2{
+  color: #D80621;
+  margin-bottom: 20px;
+}
+
+.dica-card p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* BANNER FINAL */
+/* -------------------------------- */
+
+.banner-final{
+  height: 400px;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+  url('img/BannerCanada2.jpg') center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-final-overlay{
+  max-width: 900px;
+  padding: 20px;
+}
+
+.banner-final-overlay h1{
+  font-size: 55px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+</style>
+
+</head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-        <div class="logo">
-            <a href="index.html">
-            <img src="img/BandeiraCanadá.png"> 
-            Canadá   
-            </a>
-        </div>
 
-        <nav>
-            <a href="index.html">Início</a>
-            <span>|</span>
-            <a href="PratosTipicos.html">Pratos Típicos</a>
-            <span>|</span>
-            <a href="Cultura.html">Cultura</a>
-            <span>|</span>
-            <a href="PontosTuristico.html">Pontos Turísticos</a>
-            <span>|</span>
-            <a href="GeografiaCanadá.html">Geografia do Canadá</a>
-        </nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/BandeiraCanadá.png">
+      Canadá
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <span>|</span>
+    <a href="PratosTipicos.html">Pratos Típicos</a>
+    <span>|</span>
+    <a href="Cultura.html">Cultura</a>
+    <span>|</span>
+    <a href="PontosTuristico.html">Pontos Turísticos</a>
+    <span>|</span>
+    <a href="GeografiaCanadá.html">Geografia do Canadá</a>
+  </nav>
+
 </header>
+
+<!-- MAIN -->
+
 <main>
-    
-    
-    <!--Coneteudo da pagina Culturas-->
 
+<!-- HERO -->
 
+<section class="hero-turismo">
+
+  <div class="hero-overlay">
+
+    <h1>Os destinos mais incríveis do Canadá</h1>
+
+    <p>
+      Descubra montanhas, lagos cristalinos, cidades modernas
+      e paisagens naturais inesquecíveis.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- INTRODUÇÃO -->
+
+<section class="intro-turismo">
+
+  <div class="intro-container">
+
+    <h1>Turismo no Canadá</h1>
+
+    <p>
+      O Canadá é um dos destinos turísticos mais procurados do mundo.
+      O país reúne cidades modernas, natureza preservada e experiências
+      únicas em qualquer estação do ano.
+    </p>
+
+    <p>
+      Entre lagos cristalinos, montanhas nevadas e centros urbanos vibrantes,
+      o Canadá oferece atrações para todos os estilos de viajantes.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- DESTINOS -->
+
+<section class="destinos">
+
+  <h1>Destinos Mais Visitados</h1>
+
+  <div class="destino-cards">
+
+    <!-- CARD 1 -->
+
+    <a href="#" class="destino-card">
+
+      <img src="img/CatarataNiagara.jpg">
+
+      <div class="destino-info">
+
+        <h2>Cataratas do Niágara</h2>
+
+        <p>
+          Uma das atrações naturais mais famosas do planeta.
+        </p>
+
+      </div>
+
+    </a>
+
+    <!-- CARD 2 -->
+
+    <a href="#" class="destino-card">
+
+      <img src="img/VancouverCanada.jpg">
+
+      <div class="destino-info">
+
+        <h2>Vancouver</h2>
+
+        <p>
+          Cidade moderna cercada por montanhas e natureza.
+        </p>
+
+      </div>
+
+    </a>
+
+    <!-- CARD 3 -->
+
+    <a href="#" class="destino-card">
+
+      <img src="img/TorontoCanada-.jpg">
+
+      <div class="destino-info">
+
+        <h2>Toronto</h2>
+
+        <p>
+          O principal centro econômico e cultural do Canadá.
+        </p>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- NATUREZA -->
+
+<section class="natureza">
+
+  <div class="natureza-texto">
+
+    <h1>Natureza Canadense</h1>
+
+    <p>
+      O Canadá abriga algumas das paisagens naturais mais impressionantes do planeta.
+    </p>
+
+    <p>
+      Montanhas, lagos cristalinos, auroras boreais e florestas fazem parte
+      da identidade natural do país.
+    </p>
+
+  </div>
+
+  <div class="natureza-img">
+    <img src="img/LagoEsmeralda.jpg">
+  </div>
+
+</section>
+
+  <!-- DICAS -->
+
+  <section class="dicas">
+
+    <h1>Dicas Para Turistas</h1>
+
+    <div class="dicas-cards">
+
+      <div class="dica-card">
+
+        <h2>❄ Melhor época</h2>
+
+        <p>
+          O verão canadense é ideal para turismo urbano e natureza.
+        </p>
+
+      </div>
+
+      <div class="dica-card">
+
+        <h2>🍁 Documentação</h2>
+
+        <p>
+          Brasileiros precisam de visto ou eTA para entrar no Canadá.
+        </p>
+
+      </div>
+
+      <div class="dica-card">
+
+        <h2>🏔 Experiências</h2>
+
+        <p>
+          Aproveite trilhas, lagos, neve e esportes de inverno.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 </main>
-  <footer class="footer">
+
+<!-- FOOTER -->
+
+<footer class="footer">
 
   <div class="footer-container">
 
     <!-- COLUNA 1 -->
+
     <div class="footer-col">
+
       <div class="footer-logo">
+
         <img src="img/BandeiraCanadá.png" alt="Canadá">
+
         <div>
           <h2>Canadá</h2>
           <span>Turismo & Cultura</span>
         </div>
+
       </div>
-    </div> 
+
+    </div>
 
     <!-- COLUNA 2 -->
+
     <div class="footer-col">
+
       <ul class="footer-links">
+
         <li><span>›</span><a href="Cultura.html">Cultura</a></li>
+
         <li><span>›</span><a href="PontosTuristico.html">Turismo</a></li>
+
         <li><span>›</span><a href="PratosTipicos.html">Culinária</a></li>
+
         <li><span>›</span><a href="GeografiaCanadá.html">Mapa do Canadá</a></li>
+
       </ul>
+
     </div>
 
     <!-- COLUNA 3 -->
+
     <div class="footer-col">
+
       <p class="text">
-        Quer conhecer mais sobre o Canadá?  
+        Quer conhecer mais sobre o Canadá?
         Explore conteúdos e descubra tudo sobre o país.
       </p>
 
-      <a href="https://brasilescola.uol.com.br/geografia/canada.htm" target="_blank" class="btn-exp">Explorar mais</a>
+      <a href="https://brasilescola.uol.com.br/geografia/canada.htm"
+      target="_blank"
+      class="btn-exp">
 
-      <p class="privacy">Política de privacidade</p>
+      Explorar mais
+
+      </a>
+
+      <p class="privacy">
+        Política de privacidade
+      </p>
+
     </div>
-  </div> 
+
+  </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Projeto Canadá - Desenvolvido por Fabrício Altafini Teodoro</p>
+
+    <p>
+      © 2026 Projeto Canadá - Desenvolvido por Fabrício Altafini Teodoro
+    </p>
+
   </div>
 
 </footer>
+
 </body>
 </html>

@@ -51,7 +51,6 @@
  /*Principais pontos turisticos do Canada*/  
  /* --------------------------------------*/
 .pontosturistico {
-  margin-top: -120px;
   background-color: #fff;
   
 }
@@ -105,7 +104,153 @@
 
 /*Sobre o canada*/
   
+/* SOBRE */
+.sobre {
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 100px 150px;
+  flex-wrap: wrap;
+  margin-top: -120px;
+}
 
+/* TEXTO */
+.sobre-texto {
+  flex: 1.3;
+}
+
+.sobre-texto h1 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+.sobre-texto p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* BOX */
+.info-box {
+  background: #f5f5f5;
+  padding: 20px;
+  border-left: 5px solid #D80621;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.info-box h3 {
+  margin-bottom: 10px;
+}
+
+/* IMAGEM */
+.sobre-img {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sobre-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+/* Fim da secao SOBRE */
+
+/* SECAO CURIOSIDADES */
+
+/* CURIOSIDADES */
+.curiosidades {
+  background: #f5f5f5;
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.curiosidades h1 {
+  color: #111;
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+/* CARDS */
+.curiosidade-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.curiosidade-card {
+  background: white;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.curiosidade-card:hover {
+  transform: translateY(-10px);
+}
+
+.curiosidade-card h2 {
+  color: #D80621;
+  margin-bottom: 15px;
+}
+
+.curiosidade-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* CULINÁRIA */
+.culinaria {
+  background: white;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding: 100px 50px;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TEXTO */
+.culinaria-texto {
+  flex: 1;
+
+}
+
+.culinaria-texto h1 {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.culinaria-texto p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* IMAGEM */
+.culinaria-img {
+  flex: 1;
+}
+
+.culinaria-img img {
+  height: 500px;
+  margin-left: 100px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+ 
+}
 
 </style>
 </head>
@@ -143,10 +288,33 @@
     </section>
 
     <!--Incio Da secao Sobre -->
-    <div class="sobre">
-      <h1>Um país de proporções continentais e acolhimento único</h1>
-      <p>O Canadá é mais do que belas paisagens; é um exemplo de diversidade, segurança e respeito à natureza. Localizado na América do Norte, o país se destaca por suas metrópoles modernas e vastas áreas selvagens preservadas.</p>
-    </div>  
+    <section class="sobre">
+
+        <div class="sobre-texto">
+          <h1>Um país de natureza, cultura e diversidade</h1>
+
+          <p>
+            O Canadá é o segundo maior país do mundo e está localizado na América do Norte. 
+            Conhecido por suas paisagens naturais impressionantes, o país mistura cidades modernas, 
+            qualidade de vida elevada e uma forte valorização da multiculturalidade.
+          </p>
+
+          <p>
+            Além de seus famosos lagos, montanhas e florestas, o Canadá também se destaca 
+            pela segurança, educação de qualidade e pelo respeito à natureza.
+          </p>
+
+          <div class="info-box">
+            <h3>Curiosidade</h3>
+            <p>O Canadá possui cerca de 20% da água doce do planeta.</p>
+          </div>
+        </div>
+
+        <div class="sobre-img">
+          <img src="img/VancouverCanada.jpg" alt="Cidade Vancouver no Canadá">
+        </div>
+
+    </section>  
     <!--fim Da secao Sobre -->
 
     <!--Inicio Da secao Pontos Turisticos-->
@@ -179,7 +347,61 @@
     </div>
     <!--Fim Da secao Pontos Turisticos-->
 
+    <!--Inicio Da secao curiosidade-->
+    <section class="curiosidades">
+
+      <h1>Curiosidades Sobre o Canadá</h1>
+
+      <div class="curiosidade-cards">
+
+        <div class="curiosidade-card">
+          <h2>🍁 Maior produtor de maple syrup</h2>
+          <p>O Canadá produz cerca de 70% do maple syrup consumido no mundo.</p>
+        </div>
+
+        <div class="curiosidade-card">
+          <h2>❄ Mais lagos do planeta</h2>
+          <p>O país possui mais lagos do que todos os outros países juntos.</p>
+        </div>
+
+        <div class="curiosidade-card">
+          <h2>🏒 Hockey é paixão nacional</h2>
+          <p>O hockey no gelo é um dos esportes mais populares do Canadá.</p>
+        </div>
+
+      </div>
+
+    </section>
+    <!--fim Da secao curiosidade-->
+
     <!--Inicio Da secao Estilo de Vida e Sabor (cultura e pratos tipicos)-->
+    <section class="culinaria">
+
+      <div class="culinaria-texto">
+
+        <h1>Cultura e Sabores Canadenses</h1>
+
+        <p>
+          O Canadá possui uma cultura rica e multicultural, influenciada por tradições 
+          indígenas, francesas e britânicas.
+        </p>
+
+        <p>
+          Sua culinária é conhecida por pratos típicos como poutine, maple syrup e beaver tails.
+        </p>
+
+        <a href="PratosTipicos.html" class="btn">
+          Explorar culinária
+        </a>
+
+      </div>
+
+      <div class="culinaria-img">
+        <img src="img/lobster-roll-2-sq.png" alt="Prato típico canadense">
+      </div>
+
+    </section>
+    <!--fim Da secao Estilo de Vida e Sabor (cultura e pratos tipicos)-->
     
 
   </main>
