@@ -8,6 +8,215 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+/* -------------------------------- */
+/* HERO */
+/* -------------------------------- */
+
+.hero-turismo{
+  height: 100vh;
+  background: url('./img/CatarataNiagaraEdit.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay h1{
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p{
+  margin-bottom: 20px;
+  margin-bottom: 50px; 
+}
+
+
+/* -------------------------------- */
+/* INTRODUÇÃO */
+/* -------------------------------- */
+
+.intro-cultura{
+  background: white;
+  color: #000;
+  margin-top: -120px;
+  padding: 100px 50px;
+}
+
+.intro-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-container h1{
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.intro-container p{
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* -------------------------------- */
+/* COMIDAS */
+/* -------------------------------- */
+
+.cultura-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 80px 120px;
+  background: white;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.reverse{
+  flex-direction: row-reverse;
+}
+
+/* TEXTO */
+
+.cultura-texto{
+  flex: 1;
+  min-width: 320px;
+}
+
+.cultura-texto h2{
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.cultura-texto p{
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* IMAGEM */
+
+.cultura-img{
+  flex: 1;
+  min-width: 320px;
+}
+
+.cultura-img img{
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.cultura-img img:hover{
+  transform: scale(1.02);
+}
+
+/* BOX */
+
+.info-cultura{
+  background: #f5f5f5;
+  border-left: 5px solid #D80621;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.info-cultura h3{
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.info-cultura p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* CURIOSIDADES */
+/* -------------------------------- */
+
+.curiosidades{
+  background: #f5f5f5;
+  padding: 100px 50px;
+}
+
+.curiosidades h1{
+  text-align: center;
+  color: #111;
+  font-size: 45px;
+  margin-bottom: 60px;
+}
+
+/* CARDS */
+
+.curiosidade-cards{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.curiosidade-card{
+  width: 320px;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.curiosidade-card:hover{
+  transform: translateY(-10px);
+}
+
+.curiosidade-card h2{
+  color: #D80621;
+  margin-bottom: 20px;
+}
+
+.curiosidade-card p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* BANNER FINAL */
+/* -------------------------------- */
+
+.banner-final{
+  height: 400px;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+  url('img/BannerCanada2.jpg') center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-final-overlay{
+  max-width: 900px;
+  padding: 20px;
+}
+
+.banner-final-overlay h1{
+  font-size: 55px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+</style>
+
 <body>
 
 <header>
@@ -31,10 +240,269 @@
         </nav>
 </header>
 <main>
-    
-    
-    <!--Coneteudo da pagina Culturas-->
+  <section class="hero-turismo">
 
+  <div class="hero-overlay">
+
+    <h1>Os sabores tradicionais do Canadá</h1>
+
+    <p>
+      Descubra pratos típicos canadenses, suas origens
+      e as histórias que fazem parte da culinária do país.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- HERO -->
+
+<section class="intro-cultura">
+
+  <div class="intro-container">
+
+    <h1>Culinária Canadense</h1>
+
+    <p>
+      A culinária canadense é marcada pela mistura de influências
+      indígenas, francesas, britânicas e de diversos povos imigrantes
+      que ajudaram a construir a identidade cultural do país.
+    </p>
+
+    <p>
+      Os pratos típicos do Canadá variam bastante entre as regiões,
+      trazendo ingredientes naturais, receitas tradicionais
+      e sabores que se tornaram símbolos nacionais.
+    </p>
+
+    <p>
+      Entre comidas doces e salgadas, a gastronomia canadense
+      conquistou turistas do mundo inteiro por sua autenticidade
+      e variedade.
+    </p>
+
+  </div>
+
+</section>
+
+<hr>
+
+<!-- POUTINE -->
+
+<section class="cultura-section">
+
+  <div class="cultura-img">
+    <img src="img/Poutine.jpg">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Poutine</h2>
+
+    <p>
+      O Poutine é considerado o prato mais famoso do Canadá.
+      A receita combina batatas fritas crocantes,
+      queijo coalho e molho gravy quente.
+    </p>
+
+    <p>
+      O prato surgiu na província de Quebec durante os anos 1950
+      e rapidamente se espalhou por todo o país.
+    </p>
+
+    <p>
+      Atualmente, o Poutine é encontrado em restaurantes,
+      lanchonetes e festivais gastronômicos canadenses.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Origem</h3>
+
+      <p>
+        Acredita-se que o Poutine tenha sido criado na região rural
+        de Quebec por clientes que pediam batata frita misturada
+        com queijo coalho fresco.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAPLE SYRUP -->
+
+<section class="cultura-section reverse">
+
+  <div class="cultura-img">
+    <img src="img/MapleSyrup.jpg">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Maple Syrup</h2>
+
+    <p>
+      O Maple Syrup é um tradicional xarope doce produzido
+      a partir da seiva da árvore de bordo.
+    </p>
+
+    <p>
+      O ingrediente é muito utilizado em panquecas,
+      waffles, sobremesas e receitas típicas do Canadá.
+    </p>
+
+    <p>
+      Sua produção acontece principalmente na província de Quebec,
+      referência mundial na fabricação do produto.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Curiosidade</h3>
+
+      <p>
+        Povos indígenas já utilizavam a seiva das árvores
+        muito antes da chegada dos colonizadores europeus.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BEAVER TAILS -->
+
+<section class="cultura-section">
+
+  <div class="cultura-img">
+    <img src="img/BeaverTails.jpg">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>BeaverTails</h2>
+
+    <p>
+      BeaverTails é uma famosa sobremesa canadense feita
+      com massa frita alongada, lembrando o formato
+      da cauda de um castor.
+    </p>
+
+    <p>
+      O doce ficou popular na cidade de Ottawa
+      e hoje é vendido em parques, estações de esqui
+      e pontos turísticos.
+    </p>
+
+    <p>
+      Existem diversas versões da receita,
+      incluindo coberturas de chocolate,
+      frutas e açúcar com canela.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Você sabia?</h3>
+
+      <p>
+        O castor é um dos símbolos nacionais do Canadá,
+        por isso a sobremesa se tornou tão representativa do país.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TOURTIÈRE -->
+
+<section class="cultura-section reverse">
+
+  <div class="cultura-img">
+    <img src="img/Tourtiere.jpg">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Tourtière</h2>
+
+    <p>
+      Tourtière é uma tradicional torta salgada canadense,
+      muito popular durante o Natal e festas familiares.
+    </p>
+
+    <p>
+      A receita normalmente é preparada com carne moída,
+      temperos e massa assada.
+    </p>
+
+    <p>
+      O prato possui forte influência francesa,
+      especialmente na região de Quebec.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>História</h3>
+
+      <p>
+        A Tourtière começou a ganhar popularidade entre famílias
+        franco-canadenses no século XIX.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CURIOSIDADES -->
+
+<section class="curiosidades">
+
+  <h1>Curiosidades da Culinária Canadense</h1>
+
+  <div class="curiosidade-cards">
+
+    <div class="curiosidade-card">
+
+      <h2>🍁 Maple Syrup</h2>
+
+      <p>
+        O Canadá é responsável pela maior produção
+        de Maple Syrup do planeta.
+      </p>
+
+    </div>
+
+    <div class="curiosidade-card">
+
+      <h2>🥔 Poutine</h2>
+
+      <p>
+        O Poutine é considerado um símbolo gastronômico nacional.
+      </p>
+
+    </div>
+
+    <div class="curiosidade-card">
+
+      <h2>🍰 Influências</h2>
+
+      <p>
+        A culinária canadense mistura tradições indígenas,
+        francesas e britânicas.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 </main>
   <footer class="footer">
