@@ -7,7 +7,217 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+<style>
+  
+/* -------------------------------- */
+/* HERO */
+/* -------------------------------- */
 
+.hero-cultura{
+  height: 100vh;
+  background: url('./img/MulherBandeira.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay h1{
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p{
+  margin-bottom: 20px;
+  margin-bottom: 50px; 
+}
+
+
+/* -------------------------------- */
+/* INTRODUÇÃO */
+/* -------------------------------- */
+
+.intro-cultura{
+  background: white;
+  color: #000;
+  margin-top: -120px;
+  padding: 100px 50px;
+}
+
+.intro-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-container h1{
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.intro-container p{
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* -------------------------------- */
+/* COMIDAS */
+/* -------------------------------- */
+
+.cultura-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 80px 120px;
+  background: white;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.reverse{
+  flex-direction: row-reverse;
+}
+
+/* TEXTO */
+
+.cultura-texto{
+  flex: 1;
+  min-width: 320px;
+}
+
+.cultura-texto h2{
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.cultura-texto p{
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* IMAGEM */
+
+.cultura-img{
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cultura-img img{
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.cultura-img img:hover{
+  transform: scale(1.02);
+}
+
+/* BOX */
+
+.info-cultura{
+  background: #f5f5f5;
+  border-left: 5px solid #D80621;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.info-cultura h3{
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.info-cultura p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* CURIOSIDADES */
+/* -------------------------------- */
+
+.curiosidades{
+  background: #f5f5f5;
+  padding: 100px 50px;
+}
+
+.curiosidades h1{
+  text-align: center;
+  color: #111;
+  font-size: 45px;
+  margin-bottom: 60px;
+}
+
+/* CARDS */
+
+.curiosidade-cards{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.curiosidade-card{
+  width: 320px;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.curiosidade-card:hover{
+  transform: translateY(-10px);
+}
+
+.curiosidade-card h2{
+  color: #D80621;
+  margin-bottom: 20px;
+}
+
+.curiosidade-card p{
+  color: #555;
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* BANNER FINAL */
+/* -------------------------------- */
+
+.banner-final{
+  height: 400px;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+  url('img/BannerCanada2.jpg') center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-final-overlay{
+  max-width: 900px;
+  padding: 20px;
+}
+
+.banner-final-overlay h1{
+  font-size: 55px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+</style>
 <body>
 
 <header>
@@ -31,11 +241,286 @@
         </nav>
 </header>
 <main>
-    
-    
-    <!--Coneteudo da pagina Culturas-->
+  <!-- HERO -->
 
+<section class="hero-cultura">
 
+  <div class="hero-overlay">
+
+    <h1>A rica cultura do Canadá</h1>
+
+    <p>
+      Descubra tradições, história, diversidade cultural
+      e os costumes que fazem parte da identidade canadense.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- INTRODUÇÃO -->
+
+<section class="intro-cultura">
+
+  <div class="intro-container">
+
+    <h1>Cultura Canadense</h1>
+
+    <p>
+      A cultura do Canadá é conhecida por sua diversidade,
+      respeito às diferenças e forte influência multicultural.
+      O país recebeu imigrantes de várias partes do mundo,
+      criando uma sociedade rica em tradições, idiomas,
+      culinária e costumes.
+    </p>
+
+    <p>
+      Além das influências britânicas e francesas,
+      os povos indígenas tiveram papel fundamental
+      na formação cultural canadense.
+    </p>
+
+    <p>
+      O Canadá também é reconhecido mundialmente
+      pela qualidade de vida, educação,
+      segurança e valorização da natureza.
+    </p>
+
+  </div>
+
+</section>
+
+<hr>
+
+<!-- HISTÓRIA -->
+
+<section class="cultura-section">
+
+  <div class="cultura-img">
+    <img src="img/imaHis.jpg" alt="História do Canadá">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>História do Canadá</h2>
+
+    <p>
+      Antes da chegada dos europeus,
+      o território canadense era habitado
+      por diversos povos indígenas,
+      que desenvolveram culturas,
+      tradições e formas de sobrevivência únicas.
+    </p>
+
+    <p>
+      Durante os séculos XVI e XVII,
+      franceses e britânicos começaram
+      a explorar e colonizar a região,
+      influenciando diretamente a língua,
+      a arquitetura e os costumes do país.
+    </p>
+
+    <p>
+      Em 1867, o Canadá tornou-se oficialmente
+      uma confederação,
+      iniciando sua trajetória como nação independente.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Curiosidade</h3>
+
+      <p>
+        O Canadá possui dois idiomas oficiais:
+        inglês e francês.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DIVERSIDADE -->
+
+<section class="cultura-section reverse">
+
+  <div class="cultura-img">
+    <img src="img/PrimeirasNacio.jpg" alt="Diversidade no Canadá">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Diversidade Cultural</h2>
+
+    <p>
+      O Canadá é considerado um dos países
+      mais multiculturais do mundo.
+    </p>
+
+    <p>
+      Pessoas de diferentes nacionalidades,
+      religiões e culturas convivem de forma respeitosa,
+      contribuindo para a identidade moderna do país.
+    </p>
+
+    <p>
+      Grandes cidades como Toronto,
+      Vancouver e Montreal
+      possuem comunidades de várias partes do planeta.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Destaque</h3>
+
+      <p>
+        Toronto é conhecida como uma das cidades
+        mais multiculturais do mundo.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ESPORTES -->
+
+<section class="cultura-section">
+
+  <div class="cultura-img">
+    <img src="img/HockeyGelo.jpg" alt="Hockey no Canadá">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Esportes e Tradições</h2>
+
+    <p>
+      O hockey no gelo é o esporte mais popular do Canadá
+      e faz parte da identidade nacional canadense.
+    </p>
+
+    <p>
+      Durante o inverno,
+      milhares de pessoas acompanham campeonatos,
+      praticam esportes na neve
+      e participam de festivais tradicionais.
+    </p>
+
+    <p>
+      Além do hockey,
+      esportes como lacrosse,
+      esqui e snowboard
+      também são bastante populares.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Você sabia?</h3>
+
+      <p>
+        O lacrosse foi um dos primeiros esportes
+        praticados pelos povos indígenas canadenses.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FESTIVAIS -->
+
+<section class="cultura-section reverse">
+
+  <div class="cultura-img">
+    <img src="img/quebec.jpg" alt="Festival no Canadá">
+  </div>
+
+  <div class="cultura-texto">
+
+    <h2>Festivais Canadenses</h2>
+
+    <p>
+      O Canadá realiza diversos festivais culturais
+      ao longo do ano,
+      reunindo música, arte,
+      gastronomia e tradições locais.
+    </p>
+
+    <p>
+      Eventos como o Festival de Inverno de Quebec
+      e as celebrações do Dia do Canadá
+      atraem turistas do mundo inteiro.
+    </p>
+
+    <p>
+      Esses festivais ajudam a preservar
+      a identidade cultural do país
+      e fortalecem o turismo canadense.
+    </p>
+
+    <div class="info-cultura">
+
+      <h3>Festival famoso</h3>
+
+      <p>
+        O Carnaval de Quebec é considerado
+        um dos maiores festivais de inverno do mundo.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CURIOSIDADES -->
+
+<section class="curiosidades">
+
+  <h1>Curiosidades Sobre o Canadá</h1>
+
+  <div class="curiosidade-cards">
+
+    <div class="curiosidade-card">
+
+      <h2>🍁 Símbolo Nacional</h2>
+
+      <p>
+        A folha de bordo presente na bandeira
+        é um dos maiores símbolos do Canadá.
+      </p>
+
+    </div>
+
+    <div class="curiosidade-card">
+
+      <h2>🌎 Multiculturalismo</h2>
+
+      <p>
+        O Canadá foi um dos primeiros países
+        a adotar oficialmente o multiculturalismo.
+      </p>
+
+    </div>
+
+    <div class="curiosidade-card">
+
+      <h2>❄ Inverno Canadense</h2>
+
+      <p>
+        Algumas regiões canadenses registram
+        temperaturas extremamente baixas durante o inverno.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 </main>
   <footer class="footer">
 
