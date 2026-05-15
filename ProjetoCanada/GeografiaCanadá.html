@@ -1,47 +1,420 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conheça a Geografia do Canadá</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<title>Conheça a Geografia do Canadá</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <style>
+
+    /* -------------------------------- */
+    /* HERO */
+    /* -------------------------------- */
+
+    .hero-geografia{
+      height: 100vh;
+      background: url('img/mapaCanada.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-overlay{
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .hero-overlay h1{
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .hero-overlay p{
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* -------------------------------- */
+    /* MAPA */
+    /* -------------------------------- */
+
+    .mapa-section{
+      background: white;
+      padding: 100px 50px;
+      margin-top: -120px;
+    }
+
+    .mapa-container{
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .mapa-container h1{
+      text-align: center;
+      font-size: 45px;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .mapa-box{
+      width: 100%;
+      height: 600px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .mapa-box iframe{
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* -------------------------------- */
+    /* TABELA */
+    /* -------------------------------- */
+
+    .info-geografia{
+      background: #f5f5f5;
+      padding: 100px 50px;
+    }
+
+    .info-geografia h1{
+      text-align: center;
+      font-size: 45px;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .tabela-container{
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    table th{
+      background: #D80621;
+      color: white;
+      padding: 20px;
+      text-align: left;
+    }
+
+    table td{
+      padding: 18px;
+      border-bottom: 1px solid #eee;
+      color: #555;
+      border: solid 1px #000;
+    }
+
+    /* -------------------------------- */
+    /* TEXTO */
+    /* -------------------------------- */
+
+    .territorio{
+      background: white;
+      padding: 100px 50px;
+    }
+
+    .territorio-container{
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      flex-wrap: wrap;
+    }
+
+    .territorio-texto{
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .territorio-texto h1{
+      font-size: 45px;
+      color: #111;
+      margin-bottom: 30px;
+    }
+
+    .territorio-texto p{
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+
+    .territorio-img{
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .territorio-img img{
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* -------------------------------- */
+    /* CARDS */
+    /* -------------------------------- */
+
+    .cards-geografia{
+      background: #f5f5f5;
+      padding: 100px 50px;
+    }
+
+    .cards-geografia h1{
+      text-align: center;
+      font-size: 45px;
+      margin-bottom: 60px;
+      color: #111;
+    }
+
+    .cards-container{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card-geo{
+      width: 320px;
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card-geo:hover{
+      transform: translateY(-10px);
+    }
+
+    .card-geo h2{
+      color: #D80621;
+      margin-bottom: 20px;
+    }
+
+    .card-geo p{
+      color: #555;
+      line-height: 1.7;
+    }
+
+    </style>
+</head>
 <body>
-
 <header>
-        <div class="logo">
-            <a href="index.html">
-            <img src="img/BandeiraCanadá.png"> 
-            Canadá   
-            </a>
-        </div>
 
-        <nav>
-            <a href="index.html">Início</a>
-            <span>|</span>
-            <a href="PratosTipicos.html">Pratos Típicos</a>
-            <span>|</span>
-            <a href="Cultura.html">Cultura</a>
-            <span>|</span>
-            <a href="PontosTuristico.html">Pontos Turísticos</a>
-            <span>|</span>
-            <a href="GeografiaCanadá.html">Geografia do Canadá</a>
-        </nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/BandeiraCanadá.png">
+      Canadá
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <span>|</span>
+    <a href="PratosTipicos.html">Pratos Típicos</a>
+    <span>|</span>
+    <a href="Cultura.html">Cultura</a>
+    <span>|</span>
+    <a href="PontosTuristico.html">Pontos Turísticos</a>
+    <span>|</span>
+    <a href="GeografiaCanadá.html">Geografia do Canadá</a>
+  </nav>
+
 </header>
 <main>
-    
-    
-    <!--Coneteudo da pagina Culturas-->
 
+<!-- HERO -->
+<section class="hero-geografia">
+  <div class="hero-overlay">
+    <h1>Geografia do Canadá</h1>
+
+    <p>
+      Descubra o território canadense, suas paisagens naturais,
+      clima, hidrografia e informações geográficas
+      sobre um dos maiores países do planeta.
+    </p>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="mapa-section">
+  <div class="mapa-container">
+    <h1>Mapa Interativo do Canadá</h1>
+
+    <div class="mapa-box">
+      <iframe
+      src="https://www.google.com/maps?q=canada&output=embed"
+      allowfullscreen=""
+      loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- TABELA -->
+<section class="info-geografia">
+  <h1>Informações Geográficas</h1>
+  <div class="tabela-container">
+    <table>
+      <tr>
+        <th>Informação</th>
+        <th>Dados</th>
+      </tr>
+
+      <tr>
+        <td>Quantidade de habitantes</td>
+        <td>Aproximadamente 40 milhões</td>
+      </tr>
+
+      <tr>
+        <td>Extensão territorial</td>
+        <td>9,98 milhões km²</td>
+      </tr>
+
+      <tr>
+        <td>Localização</td>
+        <td>América do Norte</td>
+      </tr>
+
+      <tr>
+        <td>Capital</td>
+        <td>Ottawa</td>
+      </tr>
+
+      <tr>
+        <td>Moeda</td>
+        <td>Dólar Canadense (CAD)</td>
+      </tr>
+
+      <tr>
+        <td>PIB</td>
+        <td>Mais de 2 trilhões de dólares</td>
+      </tr>
+
+      <tr>
+        <td>Idioma</td>
+        <td>Inglês e Francês</td>
+      </tr>
+
+      <tr>
+        <td>Clima</td>
+        <td>Temperado e frio em grande parte do território</td>
+      </tr>
+
+      <tr>
+        <td>Religiões</td>
+        <td>Cristianismo, Islamismo, Judaísmo e outras</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- TERRITÓRIO -->
+<section class="territorio">
+  <div class="territorio-container">
+    <div class="territorio-texto">
+      <h1>Território, Hidrografia e Vegetação</h1>
+
+      <p>
+        O Canadá é o segundo maior país do mundo em extensão territorial,
+        possuindo enormes áreas naturais preservadas,
+        montanhas, lagos e florestas.
+      </p>
+
+      <p>
+        Grande parte do território canadense apresenta clima frio,
+        principalmente nas regiões mais ao norte,
+        onde o inverno pode durar vários meses.
+      </p>
+
+      <p>
+        O país possui uma das hidrografias mais importantes do planeta,
+        com milhares de rios, lagos e reservas de água doce.
+      </p>
+
+      <p>
+        O famoso Lago Esmeralda, localizado nas Montanhas Rochosas,
+        recebe águas provenientes do degelo das montanhas,
+        formando sua coloração esverdeada característica.
+      </p>
+
+      <p>
+        Além disso, rios glaciais e pequenos cursos d’água
+        interligam lagos e áreas montanhosas da região,
+        contribuindo para a formação das paisagens naturais canadenses.
+      </p>
+
+      <p>
+        A vegetação do Canadá é marcada por grandes florestas de coníferas,
+        tundras no extremo norte e áreas montanhosas cobertas por neve.
+      </p>
+
+      <p>
+        O país também abriga diversos parques nacionais,
+        responsáveis pela preservação da fauna e flora canadense.
+      </p>
+
+    </div>
+    <div class="territorio-img">
+      <img src="img/LagoEsmeralda 1.jpg" alt="Geografia do Canadá">
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="cards-geografia">
+  <h1>Curiosidades Geográficas</h1>
+  <div class="cards-container">
+    <div class="card-geo">
+      <h2>🌎 Extensão Territorial</h2>
+      <p>
+        O Canadá possui uma das maiores áreas territoriais do planeta,
+        ficando atrás apenas da Rússia.
+      </p>
+    </div>
+    <div class="card-geo">
+      <h2>💧 Água Doce</h2>
+
+      <p>
+        Cerca de 20% da água doce do mundo
+        está localizada em território canadense.
+      </p>
+
+    </div>
+    <div class="card-geo">
+      <h2>❄ Clima</h2>
+
+      <p>
+        Durante o inverno, algumas regiões do Canadá
+        registram temperaturas abaixo de -30°C.
+      </p>
+
+    </div>
+  </div>
+</section>
 
 </main>
-  <footer class="footer">
-
+<footer class="footer">
   <div class="footer-container">
-
-    <!-- COLUNA 1 -->
     <div class="footer-col">
       <div class="footer-logo">
         <img src="img/BandeiraCanadá.png" alt="Canadá">
@@ -50,9 +423,8 @@
           <span>Turismo & Cultura</span>
         </div>
       </div>
-    </div> 
+    </div>
 
-    <!-- COLUNA 2 -->
     <div class="footer-col">
       <ul class="footer-links">
         <li><span>›</span><a href="Cultura.html">Cultura</a></li>
@@ -62,23 +434,28 @@
       </ul>
     </div>
 
-    <!-- COLUNA 3 -->
     <div class="footer-col">
+
       <p class="text">
-        Quer conhecer mais sobre o Canadá?  
+        Quer conhecer mais sobre o Canadá?
         Explore conteúdos e descubra tudo sobre o país.
       </p>
 
-      <a href="https://brasilescola.uol.com.br/geografia/canada.htm" target="_blank" class="btn-exp">Explorar mais</a>
-
+      <a href="https://brasilescola.uol.com.br/geografia/canada.htm"
+        target="_blank"
+        class="btn-exp">
+        Explorar mais
+      </a>
       <p class="privacy">Política de privacidade</p>
     </div>
-  </div> 
-
-  <div class="footer-bottom">
-    <p>© 2026 Projeto Canadá - Desenvolvido por Fabrício Altafini Teodoro</p>
   </div>
 
+  <div class="footer-bottom">
+    <p>
+      © 2026 Projeto Canadá - Desenvolvido por Fabrício Altafini Teodoro
+    </p>
+  </div>
 </footer>
+
 </body>
 </html>
