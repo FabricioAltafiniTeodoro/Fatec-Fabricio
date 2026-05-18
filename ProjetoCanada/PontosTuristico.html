@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Melhores Pontos Turísticos do Canadá</title>
 
   <!-- FONTE -->
@@ -11,265 +10,254 @@
 
   <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="style.css">
+      <style>
 
-<style>
+      /* -------------------------------- */
+      /* HERO */
+      /* -------------------------------- */
 
-/* -------------------------------- */
-/* HERO */
-/* -------------------------------- */
+      .hero-turismo{
+        height: 100vh;
+        background: url('./img/CatarataNiagaraEdit.jpg') center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
 
-.hero-turismo{
-  height: 100vh;
-  background: url('./img/CatarataNiagaraEdit.jpg') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+      .hero-overlay h1{
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
 
-.hero-overlay h1{
-  font-size: 50px;
-  margin-bottom: 15px;
-}
+      .hero-overlay p{
+        margin-bottom: 20px;
+        margin-bottom: 50px; 
+      }
 
-.hero-overlay p{
-  margin-bottom: 20px;
-  margin-bottom: 50px; 
-}
+      /* -------------------------------- */
+      /* INTRODUÇÃO */
+      /* -------------------------------- */
 
-/* -------------------------------- */
-/* INTRODUÇÃO */
-/* -------------------------------- */
+      .intro-turismo{
+        background: white;
+        color: #000;
+        margin-top: -120px;
+        padding: 100px 50px;
+      }
 
-.intro-turismo{
-  background: white;
-  color: #000;
-  margin-top: -120px;
-  padding: 100px 50px;
-}
+      .intro-container{
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-.intro-container{
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
+      .intro-container h1{
+        font-size: 45px;
+        margin-bottom: 30px;
+        color: #111;
+      }
 
-.intro-container h1{
-  font-size: 45px;
-  margin-bottom: 30px;
-  color: #111;
-}
+      .intro-container p{
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
 
-.intro-container p{
-  color: #555;
-  line-height: 1.9;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
+      /* -------------------------------- */
+      /* DESTINOS */
+      /* -------------------------------- */
 
-/* -------------------------------- */
-/* DESTINOS */
-/* -------------------------------- */
+      /* SEÇÕES */
+      .turismo-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        padding: 70px 120px;
+        background: white;
+        color: black;
+        flex-wrap: wrap;
+      }
 
-/* SEÇÕES */
-.turismo-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  padding: 70px 120px;
-  background: white;
-  color: black;
-  flex-wrap: wrap;
-}
+      .reverse {
+        flex-direction: row-reverse;
+      }
 
-.reverse {
-  flex-direction: row-reverse;
-}
+      /* TEXTO */
+      .turismo-texto {
+        flex: 1;
+        width: 300px;
+      }
 
-/* TEXTO */
-.turismo-texto {
-  flex: 1;
-  width: 300px;
-}
+      .turismo-texto h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #111;
+      }
 
-.turismo-texto h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #111;
-}
+      .turismo-texto p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
 
-.turismo-texto p {
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
+      /* IMAGEM */
+      .turismo-img {
+        flex: 1;
+        min-width: 300px;
+      }
 
-/* IMAGEM */
-.turismo-img {
-  flex: 1;
-  min-width: 300px;
-}
+      .turismo-img img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        transition: 0.3s;
+      }
 
-.turismo-img img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
+      .turismo-img img:hover {
+        transform: scale(1.02);
+      }
 
-.turismo-img img:hover {
-  transform: scale(1.02);
-}
+      .info-turismo {
+        background: #f5f5f5;
+        border-left: 5px solid #D80621;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 25px 0;
+      }
 
-.info-turismo {
-  background: #f5f5f5;
-  border-left: 5px solid #D80621;
-  padding: 20px;
-  border-radius: 5px;
-  margin: 25px 0;
-}
+      .info-turismo h3 {
+        margin-bottom: 10px;
+        color: #111;
+      }
 
-.info-turismo h3 {
-  margin-bottom: 10px;
-  color: #111;
-}
+      .info-turismo p {
+        color: #555;
+        line-height: 1.6;
+      }
 
-.info-turismo p {
-  color: #555;
-  line-height: 1.6;
-}
+      /* -------------------------------- */
+      /* NATUREZA */
+      /* -------------------------------- */
 
-/* -------------------------------- */
-/* NATUREZA */
-/* -------------------------------- */
+      .natureza{
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+        padding: 70px 50px;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
-.natureza{
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  padding: 70px 50px;
-  flex-wrap: wrap;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+      .natureza-texto{
+        flex: 1;
+        min-width: 300px;
+      }
 
-.natureza-texto{
-  flex: 1;
-  min-width: 300px;
-}
+      .natureza-texto h1{
+        font-size: 45px;
+        color: #111;
+        margin-bottom: 25px;
+      }
 
-.natureza-texto h1{
-  font-size: 45px;
-  color: #111;
-  margin-bottom: 25px;
-}
+      .natureza-texto p{
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 20px;
+        font-size: 17px;
+      }
 
-.natureza-texto p{
-  color: #555;
-  line-height: 1.9;
-  margin-bottom: 20px;
-  font-size: 17px;
-}
+      .natureza-img{
+        flex: 1;
+      }
 
-.natureza-img{
-  flex: 1;
-}
+      .natureza-img img{
+        width: 100%;
+        max-width: 550px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
 
-.natureza-img img{
-  width: 100%;
-  max-width: 550px;
+      /* -------------------------------- */
+      /* DICAS */
+      /* -------------------------------- */
 
-  border-radius: 10px;
+      .dicas{
+        background: #f5f5f5;
+        padding: 100px 50px;
+      }
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+      .dicas h1{
+        text-align: center;
+        color: #111;
+        font-size: 45px;
+        margin-bottom: 60px;
+      }
 
-/* -------------------------------- */
-/* DICAS */
-/* -------------------------------- */
+      /* CARDS */
 
-.dicas{
-  background: #f5f5f5;
-  padding: 100px 50px;
-}
+      .dicas-cards{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
 
-.dicas h1{
-  text-align: center;
-  color: #111;
-  font-size: 45px;
-  margin-bottom: 60px;
-}
+      .dica-card{
+        width: 320px;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: 0.3s;
+      }
 
-/* CARDS */
+      .dica-card:hover{
+        transform: translateY(-10px);
+      }
 
-.dicas-cards{
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
+      .dica-card h2{
+        color: #D80621;
+        margin-bottom: 20px;
+      }
 
-.dica-card{
-  width: 320px;
-  background: white;
+      .dica-card p{
+        color: #555;
+        line-height: 1.7;
+      }
 
-  padding: 35px;
+      /* -------------------------------- */
+      /* BANNER FINAL */
+      /* -------------------------------- */
 
-  border-radius: 10px;
+      .banner-final{
+        height: 400px;
+        background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+        url('img/BannerCanada2.jpg') center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      .banner-final-overlay{
+        max-width: 900px;
+        padding: 20px;
+      }
 
-  transition: 0.3s;
-}
+      .banner-final-overlay h1{
+        font-size: 55px;
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      }
 
-.dica-card:hover{
-  transform: translateY(-10px);
-}
-
-.dica-card h2{
-  color: #D80621;
-  margin-bottom: 20px;
-}
-
-.dica-card p{
-  color: #555;
-  line-height: 1.7;
-}
-
-/* -------------------------------- */
-/* BANNER FINAL */
-/* -------------------------------- */
-
-.banner-final{
-  height: 400px;
-
-  background:
-  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-  url('img/BannerCanada2.jpg') center/cover no-repeat;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.banner-final-overlay{
-  max-width: 900px;
-  padding: 20px;
-}
-
-.banner-final-overlay h1{
-  font-size: 55px;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-</style>
-
+      </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -304,9 +292,7 @@
 <!-- HERO -->
 
 <section class="hero-turismo">
-
   <div class="hero-overlay">
-
     <h1>Os destinos mais incríveis do Canadá</h1>
 
     <p>
@@ -315,7 +301,6 @@
     </p>
 
   </div>
-
 </section>
 
 <!-- INTRODUÇÃO -->
@@ -459,29 +444,28 @@
     <h1>Natureza Canadense</h1>
 
     <p>
-  O Canadá abriga algumas das paisagens naturais mais impressionantes
-  do planeta. O país possui enormes áreas preservadas, repletas de
-  montanhas, lagos, rios, geleiras e florestas que fazem parte da
-  identidade natural canadense.
-</p>
+      O Canadá abriga algumas das paisagens naturais mais impressionantes
+      do planeta. O país possui enormes áreas preservadas, repletas de
+      montanhas, lagos, rios, geleiras e florestas que fazem parte da
+      identidade natural canadense.
+    </p>
 
-<p>
-  Grande parte do território canadense é composta por parques nacionais
-  protegidos, permitindo que turistas tenham contato direto com a natureza
-  de maneira sustentável e segura.
-</p>
+    <p>
+      Grande parte do território canadense é composta por parques nacionais
+      protegidos, permitindo que turistas tenham contato direto com a natureza
+      de maneira sustentável e segura.
+    </p>
 
-<p>
-  Durante determinadas épocas do ano, também é possível observar
-  fenômenos naturais incríveis, como a aurora boreal, especialmente
-  nas regiões mais ao norte do país.
-</p>
+    <p>
+      Durante determinadas épocas do ano, também é possível observar
+      fenômenos naturais incríveis, como a aurora boreal, especialmente
+      nas regiões mais ao norte do país.
+    </p>
 
-<p>
-  A natureza canadense é um dos principais motivos que fazem milhões
-  de turistas visitarem o país anualmente.
-</p>
-
+    <p>
+      A natureza canadense é um dos principais motivos que fazem milhões
+      de turistas visitarem o país anualmente.
+    </p>
   </div>
   <div class="natureza-img">
     <img src="img/LagoEsmeralda 1.jpg">
@@ -491,23 +475,16 @@
   <!-- DICAS -->
 
   <section class="dicas">
-
     <h1>Dicas Para Turistas</h1>
-
     <div class="dicas-cards">
-
       <div class="dica-card">
-
         <h2>❄ Melhor época</h2>
-
         <p>
           O verão canadense é ideal para turismo urbano e natureza.
         </p>
-
       </div>
 
       <div class="dica-card">
-
         <h2>🍁 Documentação</h2>
 
         <p>
@@ -515,19 +492,13 @@
         </p>
 
       </div>
-
       <div class="dica-card">
-
         <h2>🏔 Experiências</h2>
-
         <p>
           Aproveite trilhas, lagos, neve e esportes de inverno.
         </p>
-
       </div>
-
     </div>
-
   </section>
 </main>
 
